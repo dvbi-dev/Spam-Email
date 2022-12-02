@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Spam Email</title>
+</head>
+    <body>
+        <form action="{{ url_for('result')}} "method = "post" name="myForm">
+            <h3>Nhập nội dung email</h3>
+            <p><input type="text" name="email_txt"/></p>
+            <p>
+                <label for="classifier">Hãy Chọn Thuật Toán: </label>
+                <select name="classifier" id="classifier">
+                    <option value="dt">Logistic Regression Accuracy</option>
+                    <option value="lr">Decision Tree Classifier</option>
+                    <option value="Random Forest Classifier">Random Forest Classifier</option>
+                    <option value="Multinomial Naive Bayes">Multinomial Naive Bayes</option>
+                    <option value="Linear SVC">Linear SVC</option>
+                    <option value="K Neighbors Classifie">K Neighbors Classifie</option>
+                </select>
+            </p>
+            <p><input type="submit"  value="Phân Loại"/></p>
+        </form>
+
+    </body>
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+  alert("Name must be filled out");
+  return false;
+  }
+}
+</script>
+</html>
